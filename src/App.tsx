@@ -58,11 +58,11 @@ function App() {
                 loading="lazy"
                 width={400}
                 height={200}
-                className="w-full h-full object-scale-down lg:object-fill aspect-video"
+                className="w-full h-full object-fill lg:object-fill aspect-video"
               />
             </div>
           ),
-          duration: 7000,
+          // duration: 7000,
         },
       ],
     },
