@@ -14,8 +14,17 @@ import CdaB_2 from "./assets/CDA/2.gif";
 import CdaB_3 from "./assets/CDA/3.gif";
 import CdaB_4 from "./assets/CDA/4.gif";
 import CdaB_5 from "./assets/CDA/5.gif";
-import CdaB_6 from "./assets/CDA/6.gif";
+import CdaB_final from "./assets/CDA/final.gif";
 import CdaB_7 from "./assets/CDA/7.gif";
+import CdaB_8 from "./assets/CDA/8.gif";
+import CdaB_9 from "./assets/CDA/9.gif";
+import CdaB_10 from "./assets/CDA/10.gif";
+import CdaB_11 from "./assets/CDA/11.gif";
+import CdaB_12 from "./assets/CDA/12.gif";
+import CdaB_13 from "./assets/CDA/13.gif";
+import CdaB_14 from "./assets/CDA/14.gif";
+import CdaB_15 from "./assets/CDA/15.gif";
+import CdaB_16 from "./assets/CDA/16.gif";
 
 function App() {
   const storiesData: Company[] = [
@@ -233,7 +242,142 @@ function App() {
           content: (
             <div className="w-full h-full flex justify-center items-center text-white text-xl bg-zinc-800">
               <img
-                src={CdaB_6}
+                src={CdaB_8}
+                alt="CdaB_8"
+                loading="lazy"
+                width={400}
+                height={200}
+                className="w-full h-full object-fill lg:object-contain aspect-video"
+              />
+            </div>
+          ),
+          duration: 7000,
+        },
+        {
+          content: (
+            <div className="w-full h-full flex justify-center items-center text-white text-xl bg-zinc-800">
+              <img
+                src={CdaB_9}
+                alt="CdaB_9"
+                loading="lazy"
+                width={400}
+                height={200}
+                className="w-full h-full object-fill lg:object-contain aspect-video"
+              />
+            </div>
+          ),
+          duration: 7000,
+        },
+        {
+          content: (
+            <div className="w-full h-full flex justify-center items-center text-white text-xl bg-zinc-800">
+              <img
+                src={CdaB_10}
+                alt="CdaB_10"
+                loading="lazy"
+                width={400}
+                height={200}
+                className="w-full h-full object-fill lg:object-contain aspect-video"
+              />
+            </div>
+          ),
+          duration: 7000,
+        },
+        {
+          content: (
+            <div className="w-full h-full flex justify-center items-center text-white text-xl bg-zinc-800">
+              <img
+                src={CdaB_11}
+                alt="CdaB_11"
+                loading="lazy"
+                width={400}
+                height={200}
+                className="w-full h-full object-fill lg:object-contain aspect-video"
+              />
+            </div>
+          ),
+          duration: 7000,
+        },
+        {
+          content: (
+            <div className="w-full h-full flex justify-center items-center text-white text-xl bg-zinc-800">
+              <img
+                src={CdaB_12}
+                alt="CdaB_12"
+                loading="lazy"
+                width={400}
+                height={200}
+                className="w-full h-full object-fill lg:object-contain aspect-video"
+              />
+            </div>
+          ),
+          duration: 7000,
+        },
+        {
+          content: (
+            <div className="w-full h-full flex justify-center items-center text-white text-xl bg-zinc-800">
+              <img
+                src={CdaB_13}
+                alt="CdaB_13"
+                loading="lazy"
+                width={400}
+                height={200}
+                className="w-full h-full object-fill lg:object-contain aspect-video"
+              />
+            </div>
+          ),
+          duration: 7000,
+        },
+        {
+          content: (
+            <div className="w-full h-full flex justify-center items-center text-white text-xl bg-zinc-800">
+              <img
+                src={CdaB_14}
+                alt="CdaB_14"
+                loading="lazy"
+                width={400}
+                height={200}
+                className="w-full h-full object-fill lg:object-contain aspect-video"
+              />
+            </div>
+          ),
+          duration: 7000,
+        },
+        {
+          content: (
+            <div className="w-full h-full flex justify-center items-center text-white text-xl bg-zinc-800">
+              <img
+                src={CdaB_15}
+                alt="CdaB_15"
+                loading="lazy"
+                width={400}
+                height={200}
+                className="w-full h-full object-fill lg:object-contain aspect-video"
+              />
+            </div>
+          ),
+          duration: 7000,
+        },
+        {
+          content: (
+            <div className="w-full h-full flex justify-center items-center text-white text-xl bg-zinc-800">
+              <img
+                src={CdaB_16}
+                alt="CdaB_16"
+                loading="lazy"
+                width={400}
+                height={200}
+                className="w-full h-full object-fill lg:object-contain aspect-video"
+              />
+            </div>
+          ),
+          duration: 7000,
+        },
+        {
+          content: (
+            <div className="w-full h-full flex justify-center items-center text-white text-xl bg-zinc-800">
+              <img
+                src={CdaB_final}
                 alt="CdaB_6"
                 loading="lazy"
                 width={400}
