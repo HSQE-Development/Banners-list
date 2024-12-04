@@ -3,6 +3,7 @@ import Imagencampana from "./assets/Imagencampaña.png";
 import FirstBanner from "./Components/FirstBanner";
 import LogoAso from "./assets/Asooccidente/Logo.png";
 import BannerHseq from "./assets/HSEQ/BICIUSUARIO.gif";
+import BannerMotoHseq from "./assets/HSEQ/Moto.gif";
 import CesviVolante from "./assets/Cesvi/volante1.jpg";
 import CesviVolante_second from "./assets/Cesvi/volante2.jpg";
 import RegisterForm from "./Components/RegisterForm";
@@ -87,6 +88,21 @@ function App() {
               <img
                 src={BannerHseq}
                 alt="Imagen de hseq"
+                loading="lazy"
+                width={400}
+                height={200}
+                className="w-full h-full object-fill lg:object-fill aspect-video"
+              />
+            </div>
+          ),
+          duration: 7000,
+        },
+        {
+          content: (
+            <div className="w-full h-full flex justify-center items-center text-white text-xl bg-zinc-800">
+              <img
+                src={BannerMotoHseq}
+                alt="Imagen de hseq moto"
                 loading="lazy"
                 width={400}
                 height={200}
