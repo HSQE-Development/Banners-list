@@ -3,7 +3,6 @@ import Imagencampana from "./assets/Imagencampaña.png";
 import Welcome from "./Components/Welcome";
 import FirstBanner from "./Components/FirstBanner";
 import LogoAso from "./assets/Asooccidente/Logo.png";
-import LogoHseq from "./assets/HSEQ/Logo.png";
 import BannerHseq from "./assets/HSEQ/banner_1.jpg";
 import CesviVolante from "./assets/Cesvi/volante1.jpg";
 import CesviVolante_second from "./assets/Cesvi/volante2.jpg";
@@ -68,15 +67,6 @@ function App() {
       ],
     },
     {
-      logo: (
-        <img
-          src={LogoHseq}
-          alt="LOGO Hseq"
-          width={150}
-          height={70}
-          loading="lazy"
-        />
-      ),
       name: "Asooccidente",
       slogan: "Construyendo el futuro",
       stories: [
