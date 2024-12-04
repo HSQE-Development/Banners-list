@@ -22,7 +22,7 @@ import CdaB_13 from "./assets/CDA/13.gif";
 import CdaB_14 from "./assets/CDA/14.gif";
 import CdaB_15 from "./assets/CDA/15.gif";
 import CdaB_16 from "./assets/CDA/16.gif";
-import Welcome from "./assets/Welcome.svg";
+import Welcome from "./assets/bienvenido.gif";
 
 function App() {
   const storiesData: Company[] = [
