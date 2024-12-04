@@ -136,15 +136,6 @@ function App() {
       ],
     },
     {
-      logo: (
-        <img
-          src={LogoCda}
-          alt="LOGO CDA"
-          width={100}
-          height={70}
-          loading="lazy"
-        />
-      ),
       name: "CDA",
       slogan: "Construyendo el futuro",
       stories: [
