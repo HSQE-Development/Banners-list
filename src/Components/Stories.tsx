@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import useLongPress from "../hooks/useLongPress";
 
 export interface Story {
@@ -19,58 +19,20 @@ interface StoriesProps {
   defaultDuration: number; // Duración por defecto para historias con duración indefinida
 }
 
-const preloadImages = (story: Story) => {
-  if (!story.content) return;
-  const images = React.Children.toArray(story.content)
-    .filter(
-      (child) => React.isValidElement(child) && child.props?.src // Filtramos solo los elementos con `src`
-    )
-    .map((child) => child as ReactElement); // Aseguramos que es un `ReactElement`
-
-  // Ahora precargamos las imágenes
-  images.forEach((image) => {
-    const img = new Image();
-    img.src = image.props.src;
-    img.onload = () => {
-      console.log(`Imagen cargada: ${image.props.src}`); // Opcional: log para verificar que la imagen se haya cargado
-    };
-    img.onerror = () => {
-      console.error(`Error al cargar la imagen: ${image.props.src}`); // Opcional: log si ocurre un error
-    }; // Opcional: si quieres mantener el lazy loading
-  });
-};
-
 export default function Stories({ companies, defaultDuration }: StoriesProps) {
   const [currentCompanyIndex, setCurrentCompanyIndex] = useState(0); // Empresa actual
   const [currentStoryIndex, setCurrentStoryIndex] = useState(0); // Historia actual de la empresa
   const [progress, setProgress] = useState(0); // Progreso actual
   const [isPaused, setIsPaused] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const ref = useRef<HTMLDivElement | null>(null);
 
   const currentCompany = companies[currentCompanyIndex];
   const currentStories = currentCompany.stories;
   const currentStory = currentStories[currentStoryIndex];
 
-  const preloadNextStoryImages = () => {
-    // Verificamos que no estemos al final de las historias
-    if (currentStoryIndex < currentStories.length - 1) {
-      const nextStory = currentStories[currentStoryIndex + 1];
-      preloadImages(nextStory); // Precargamos las imágenes de la siguiente historia
-    }
-    // Si estamos al final de las historias de la empresa, precargamos la primera historia de la siguiente empresa
-    else if (currentCompanyIndex < companies.length - 1) {
-      const nextCompany = companies[currentCompanyIndex + 1];
-      const nextStory = nextCompany.stories[0];
-      preloadImages(nextStory); // Precargamos las imágenes de la primera historia de la siguiente empresa
-    }
-  };
-
-  useEffect(() => {
-    // Precargar imágenes de la siguiente historia si existe
-    preloadNextStoryImages();
-  }, [currentStoryIndex, currentCompanyIndex]);
-
   const handleNext = () => {
+    setIsLoading(true);
     if (currentStoryIndex < currentStories.length - 1) {
       setCurrentStoryIndex((prevIndex) => prevIndex + 1);
     } else if (currentCompanyIndex < companies.length - 1) {
@@ -81,6 +43,7 @@ export default function Stories({ companies, defaultDuration }: StoriesProps) {
   };
 
   const handlePrev = () => {
+    setIsLoading(true);
     if (currentStoryIndex > 0) {
       setCurrentStoryIndex((prevIndex) => prevIndex - 1);
     } else if (currentCompanyIndex > 0) {
@@ -92,11 +55,12 @@ export default function Stories({ companies, defaultDuration }: StoriesProps) {
     setProgress(0);
   };
 
-  const handleLongPress = () => {
-    console.log("¡Has mantenido presionado!");
+  const handleImageLoad = () => {
+    setIsLoading(false);
   };
+
+  const handleLongPress = () => {};
   const handleRelease = () => {
-    console.log("¡Has soltado!");
     setIsPaused(false);
   };
 
@@ -113,7 +77,7 @@ export default function Stories({ companies, defaultDuration }: StoriesProps) {
     //@ts-ignore
     let interval: NodeJS.Timeout;
 
-    if (!isPaused) {
+    if (!isPaused && !isLoading) {
       interval = setInterval(() => {
         setProgress((prevProgress) => {
           const nextProgress =
@@ -130,7 +94,7 @@ export default function Stories({ companies, defaultDuration }: StoriesProps) {
     }
 
     return () => clearInterval(interval);
-  }, [currentStoryIndex, currentCompanyIndex, isPaused]);
+  }, [currentStoryIndex, currentCompanyIndex, isPaused, isLoading]);
 
   const handleClick = (event: React.MouseEvent) => {
     const screenWidth = window.innerWidth;
@@ -144,6 +108,27 @@ export default function Stories({ companies, defaultDuration }: StoriesProps) {
         handlePrev();
       }
     }
+  };
+
+  const renderContent = () => {
+    const content = currentStory.content;
+    if (
+      React.isValidElement(content) &&
+      content.type === "div" &&
+      content.props.children?.type === "img"
+    ) {
+      return React.cloneElement(content, {
+        //@ts-ignore
+        children: React.cloneElement(content.props.children, {
+          onLoad: handleImageLoad,
+          style: {
+            opacity: isLoading ? 0 : 1,
+            transition: "opacity 0.3s ease-in-out",
+          },
+        }),
+      });
+    }
+    return content;
   };
 
   return (
@@ -188,7 +173,8 @@ export default function Stories({ companies, defaultDuration }: StoriesProps) {
           className="relative z-10 w-full h-full flex justify-center items-center text-white"
           ref={ref}
         >
-          {currentStory.content}
+          {/* {currentStory.content} */}
+          {renderContent()}
         </div>
       </div>
     </div>
