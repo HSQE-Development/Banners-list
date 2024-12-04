@@ -3,7 +3,7 @@ import Imagencampana from "./assets/Imagencampaña.png";
 import Welcome from "./Components/Welcome";
 import FirstBanner from "./Components/FirstBanner";
 import LogoAso from "./assets/Asooccidente/Logo.png";
-import BannerHseq from "./assets/HSEQ/banner_1.jpg";
+import BannerHseq from "./assets/HSEQ/BICIUSUARIO.gif";
 import CesviVolante from "./assets/Cesvi/volante1.jpg";
 import CesviVolante_second from "./assets/Cesvi/volante2.jpg";
 import RegisterForm from "./Components/RegisterForm";
