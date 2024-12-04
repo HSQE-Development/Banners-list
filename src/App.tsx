@@ -1,6 +1,5 @@
 import Stories, { Company } from "./Components/Stories";
 import Imagencampana from "./assets/Imagencampaña.png";
-import Welcome from "./Components/Welcome";
 import FirstBanner from "./Components/FirstBanner";
 import LogoAso from "./assets/Asooccidente/Logo.png";
 import BannerHseq from "./assets/HSEQ/BICIUSUARIO.gif";
@@ -23,13 +22,25 @@ import CdaB_13 from "./assets/CDA/13.gif";
 import CdaB_14 from "./assets/CDA/14.gif";
 import CdaB_15 from "./assets/CDA/15.gif";
 import CdaB_16 from "./assets/CDA/16.gif";
+import Welcome from "./assets/Welcome.svg";
 
 function App() {
   const storiesData: Company[] = [
     {
       stories: [
         {
-          content: <Welcome />,
+          content: (
+            <div className="w-full h-full flex justify-center items-center text-white text-xl bg-zinc-800">
+              <img
+                src={Welcome}
+                alt="Imagen de welcome"
+                loading="lazy"
+                width={400}
+                height={200}
+                className="w-full h-full object-fill lg:object-fill aspect-video"
+              />
+            </div>
+          ),
         },
         {
           content: <FirstBanner />,
