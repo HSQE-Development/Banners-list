@@ -8,7 +8,6 @@ import BannerHseq from "./assets/HSEQ/banner_1.jpg";
 import CesviVolante from "./assets/Cesvi/volante1.jpg";
 import CesviVolante_second from "./assets/Cesvi/volante2.jpg";
 import RegisterForm from "./Components/RegisterForm";
-import LogoCda from "./assets/CDA/Logo.png";
 import CdaB_1 from "./assets/CDA/1.gif";
 import CdaB_2 from "./assets/CDA/2.gif";
 import CdaB_3 from "./assets/CDA/3.gif";
