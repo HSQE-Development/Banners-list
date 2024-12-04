@@ -8,3 +8,9 @@ body {
   font-weight: 900;
   font-style: normal;
 }
+
+.lazy-load-image-background {
+  width: auto !important;
+  height: auto !important;
+  object-fit: scale-down !important;
+}

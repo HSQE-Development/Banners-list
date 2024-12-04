@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { ReactElement, useEffect, useRef, useState } from "react";
 import useLongPress from "../hooks/useLongPress";
 
 export interface Story {
@@ -19,6 +19,27 @@ interface StoriesProps {
   defaultDuration: number; // Duración por defecto para historias con duración indefinida
 }
 
+const preloadImages = (story: Story) => {
+  if (!story.content) return;
+  const images = React.Children.toArray(story.content)
+    .filter(
+      (child) => React.isValidElement(child) && child.props?.src // Filtramos solo los elementos con `src`
+    )
+    .map((child) => child as ReactElement); // Aseguramos que es un `ReactElement`
+
+  // Ahora precargamos las imágenes
+  images.forEach((image) => {
+    const img = new Image();
+    img.src = image.props.src;
+    img.onload = () => {
+      console.log(`Imagen cargada: ${image.props.src}`); // Opcional: log para verificar que la imagen se haya cargado
+    };
+    img.onerror = () => {
+      console.error(`Error al cargar la imagen: ${image.props.src}`); // Opcional: log si ocurre un error
+    }; // Opcional: si quieres mantener el lazy loading
+  });
+};
+
 export default function Stories({ companies, defaultDuration }: StoriesProps) {
   const [currentCompanyIndex, setCurrentCompanyIndex] = useState(0); // Empresa actual
   const [currentStoryIndex, setCurrentStoryIndex] = useState(0); // Historia actual de la empresa
@@ -29,6 +50,25 @@ export default function Stories({ companies, defaultDuration }: StoriesProps) {
   const currentCompany = companies[currentCompanyIndex];
   const currentStories = currentCompany.stories;
   const currentStory = currentStories[currentStoryIndex];
+
+  const preloadNextStoryImages = () => {
+    // Verificamos que no estemos al final de las historias
+    if (currentStoryIndex < currentStories.length - 1) {
+      const nextStory = currentStories[currentStoryIndex + 1];
+      preloadImages(nextStory); // Precargamos las imágenes de la siguiente historia
+    }
+    // Si estamos al final de las historias de la empresa, precargamos la primera historia de la siguiente empresa
+    else if (currentCompanyIndex < companies.length - 1) {
+      const nextCompany = companies[currentCompanyIndex + 1];
+      const nextStory = nextCompany.stories[0];
+      preloadImages(nextStory); // Precargamos las imágenes de la primera historia de la siguiente empresa
+    }
+  };
+
+  useEffect(() => {
+    // Precargar imágenes de la siguiente historia si existe
+    preloadNextStoryImages();
+  }, [currentStoryIndex, currentCompanyIndex]);
 
   const handleNext = () => {
     if (currentStoryIndex < currentStories.length - 1) {

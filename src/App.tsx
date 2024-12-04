@@ -48,14 +48,14 @@ function App() {
               <img
                 src={Imagencampana}
                 alt="Imagen de Campaña"
-                loading="eager"
+                loading="lazy"
                 width={400}
                 height={200}
                 className="w-full h-full object-scale-down lg:object-fill aspect-video"
               />
             </div>
           ),
-          duration: 4000,
+          duration: 7000,
         },
       ],
     },
@@ -78,10 +78,10 @@ function App() {
               <img
                 src={BannerHseq}
                 alt="Imagen de hseq"
-                loading="eager"
+                loading="lazy"
                 width={400}
                 height={200}
-                className="w-full h-full object-scale-down lg:object-fill aspect-video"
+                className="w-full h-full object-fill lg:object-fill aspect-video"
               />
             </div>
           ),
@@ -99,14 +99,14 @@ function App() {
               <img
                 src={CesviVolante}
                 alt="Volante"
-                loading="eager"
+                loading="lazy"
                 width={400}
                 height={200}
                 className="w-full h-full object-fill lg:object-contain aspect-video"
               />
             </div>
           ),
-          duration: 5000,
+          duration: 7000,
         },
         {
           content: (
@@ -114,14 +114,14 @@ function App() {
               <img
                 src={CesviVolante_second}
                 alt="Volante 2"
-                loading="eager"
+                loading="lazy"
                 width={400}
                 height={200}
                 className="w-full h-full object-fill lg:object-contain aspect-video"
               />
             </div>
           ),
-          duration: 5000,
+          duration: 7000,
           propagatedClick: false,
         },
       ],
@@ -145,14 +145,14 @@ function App() {
               <img
                 src={CdaB_1}
                 alt="CdaB_1"
-                loading="eager"
+                loading="lazy"
                 width={400}
                 height={200}
                 className="w-full h-full object-fill lg:object-contain aspect-video"
               />
             </div>
           ),
-          duration: 5000,
+          duration: 7000,
         },
         {
           content: (
@@ -160,14 +160,14 @@ function App() {
               <img
                 src={CdaB_2}
                 alt="CdaB_2"
-                loading="eager"
+                loading="lazy"
                 width={400}
                 height={200}
                 className="w-full h-full object-fill lg:object-contain aspect-video"
               />
             </div>
           ),
-          duration: 5000,
+          duration: 7000,
         },
         {
           content: (
@@ -175,14 +175,14 @@ function App() {
               <img
                 src={CdaB_3}
                 alt="CdaB_3"
-                loading="eager"
+                loading="lazy"
                 width={400}
                 height={200}
                 className="w-full h-full object-fill lg:object-contain aspect-video"
               />
             </div>
           ),
-          duration: 5000,
+          duration: 7000,
         },
         {
           content: (
@@ -190,14 +190,14 @@ function App() {
               <img
                 src={CdaB_4}
                 alt="CdaB_4"
-                loading="eager"
+                loading="lazy"
                 width={400}
                 height={200}
                 className="w-full h-full object-fill lg:object-contain aspect-video"
               />
             </div>
           ),
-          duration: 5000,
+          duration: 7000,
         },
         {
           content: (
@@ -205,14 +205,14 @@ function App() {
               <img
                 src={CdaB_5}
                 alt="CdaB_5"
-                loading="eager"
+                loading="lazy"
                 width={400}
                 height={200}
                 className="w-full h-full object-fill lg:object-contain aspect-video"
               />
             </div>
           ),
-          duration: 5000,
+          duration: 7000,
         },
         {
           content: (
@@ -220,14 +220,14 @@ function App() {
               <img
                 src={CdaB_7}
                 alt="CdaB_7"
-                loading="eager"
+                loading="lazy"
                 width={400}
                 height={200}
                 className="w-full h-full object-fill lg:object-contain aspect-video"
               />
             </div>
           ),
-          duration: 5000,
+          duration: 7000,
         },
         {
           content: (
@@ -235,14 +235,14 @@ function App() {
               <img
                 src={CdaB_6}
                 alt="CdaB_6"
-                loading="eager"
+                loading="lazy"
                 width={400}
                 height={200}
                 className="w-full h-full object-fill lg:object-contain aspect-video"
               />
             </div>
           ),
-          duration: 5000,
+          duration: 7000,
         },
       ],
     },
