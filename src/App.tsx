@@ -4,8 +4,7 @@ import Welcome from "./Components/Welcome";
 import FirstBanner from "./Components/FirstBanner";
 import LogoAso from "./assets/Asooccidente/Logo.png";
 import LogoHseq from "./assets/HSEQ/Logo.png";
-import BannerHseq from "./assets/HSEQ/banner_1.png";
-import LogoCesvi from "./assets/Cesvi/LogoBlack.png";
+import BannerHseq from "./assets/HSEQ/banner_1.jpg";
 import CesviVolante from "./assets/Cesvi/volante1.jpg";
 import CesviVolante_second from "./assets/Cesvi/volante2.jpg";
 import RegisterForm from "./Components/RegisterForm";
@@ -49,7 +48,7 @@ function App() {
               <img
                 src={Imagencampana}
                 alt="Imagen de Campaña"
-                loading="lazy"
+                loading="eager"
                 width={400}
                 height={200}
                 className="w-full h-full object-scale-down lg:object-fill aspect-video"
@@ -79,7 +78,7 @@ function App() {
               <img
                 src={BannerHseq}
                 alt="Imagen de hseq"
-                loading="lazy"
+                loading="eager"
                 width={400}
                 height={200}
                 className="w-full h-full object-scale-down lg:object-fill aspect-video"
@@ -91,15 +90,6 @@ function App() {
       ],
     },
     {
-      logo: (
-        <img
-          src={LogoCesvi}
-          alt="LOGO Cesvi"
-          width={150}
-          height={70}
-          loading="lazy"
-        />
-      ),
       name: "Cesvi",
       slogan: "Construyendo el futuro",
       stories: [
@@ -109,7 +99,7 @@ function App() {
               <img
                 src={CesviVolante}
                 alt="Volante"
-                loading="lazy"
+                loading="eager"
                 width={400}
                 height={200}
                 className="w-full h-full object-fill lg:object-contain aspect-video"
@@ -124,7 +114,7 @@ function App() {
               <img
                 src={CesviVolante_second}
                 alt="Volante 2"
-                loading="lazy"
+                loading="eager"
                 width={400}
                 height={200}
                 className="w-full h-full object-fill lg:object-contain aspect-video"
@@ -155,7 +145,7 @@ function App() {
               <img
                 src={CdaB_1}
                 alt="CdaB_1"
-                loading="lazy"
+                loading="eager"
                 width={400}
                 height={200}
                 className="w-full h-full object-fill lg:object-contain aspect-video"
@@ -170,7 +160,7 @@ function App() {
               <img
                 src={CdaB_2}
                 alt="CdaB_2"
-                loading="lazy"
+                loading="eager"
                 width={400}
                 height={200}
                 className="w-full h-full object-fill lg:object-contain aspect-video"
@@ -185,7 +175,7 @@ function App() {
               <img
                 src={CdaB_3}
                 alt="CdaB_3"
-                loading="lazy"
+                loading="eager"
                 width={400}
                 height={200}
                 className="w-full h-full object-fill lg:object-contain aspect-video"
@@ -200,7 +190,7 @@ function App() {
               <img
                 src={CdaB_4}
                 alt="CdaB_4"
-                loading="lazy"
+                loading="eager"
                 width={400}
                 height={200}
                 className="w-full h-full object-fill lg:object-contain aspect-video"
@@ -215,7 +205,7 @@ function App() {
               <img
                 src={CdaB_5}
                 alt="CdaB_5"
-                loading="lazy"
+                loading="eager"
                 width={400}
                 height={200}
                 className="w-full h-full object-fill lg:object-contain aspect-video"
@@ -230,7 +220,7 @@ function App() {
               <img
                 src={CdaB_7}
                 alt="CdaB_7"
-                loading="lazy"
+                loading="eager"
                 width={400}
                 height={200}
                 className="w-full h-full object-fill lg:object-contain aspect-video"
@@ -245,7 +235,7 @@ function App() {
               <img
                 src={CdaB_6}
                 alt="CdaB_6"
-                loading="lazy"
+                loading="eager"
                 width={400}
                 height={200}
                 className="w-full h-full object-fill lg:object-contain aspect-video"
