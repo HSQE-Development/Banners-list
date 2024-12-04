@@ -67,7 +67,7 @@ function App() {
       ],
     },
     {
-      name: "Asooccidente",
+      name: "Hseq",
       slogan: "Construyendo el futuro",
       stories: [
         {
